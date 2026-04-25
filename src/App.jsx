@@ -11,24 +11,25 @@ import NotFound from "./pages/NotFound";
 import { AuthProvider } from "./context/AuthContext";
 
 function App() {
-return (
-  <AuthProvider>
-    <BrowserRouter>
-      <Navbar />
+  return (
+    <AuthProvider>
+      <BrowserRouter>
+        <Navbar />
 
-      <main className="main-content">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/recipes/:id" element={<RecipeDetails />} />
-          <Route path="/create" element={<CreateRecipe />} />
-          <Route path="/edit/:id" element={<EditRecipe />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </main>
-    </BrowserRouter>
-  </AuthProvider>
-);
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/recipes/:id" element={<RecipeDetails />} />
+            <Route path="/create" element={<CreateRecipe />} />
+            <Route path="/edit/:id" element={<EditRecipe />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </main>
+      </BrowserRouter>
+    </AuthProvider>
+  );
+}
 
 export default App;
