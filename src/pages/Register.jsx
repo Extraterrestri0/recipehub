@@ -17,7 +17,15 @@ export default function Register() {
       },
       body: JSON.stringify({ email, password })
     })
-      .then(() => navigate("/login"))
+      .then((res) => {
+  console.log("REGISTER RESPONSE:", res);
+
+  if (!res.ok) {
+    throw new Error("Registration failed");
+  }
+
+  navigate("/login");
+})
       .catch(err => console.log(err));
   };
 
