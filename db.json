@@ -8,11 +8,10 @@
   ],
   "recipes": [
     {
-      "id": "1",
-      "title": "Chocolate Cake",
+      "title": "Chocolate Cake 2",
       "imageUrl": "https://images.unsplash.com/photo-1606312619070-d48b4c652a52",
       "description": "Delicious chocolate cake",
-      "author": "Admin"
+      "id": "1"
     },
     {
       "title": "Pizza",
