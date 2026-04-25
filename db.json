@@ -1,0 +1,12 @@
+{
+  "users": [],
+  "recipes": [
+    {
+      "id": 1,
+      "title": "Chocolate Cake",
+      "imageUrl": "https://images.unsplash.com/photo-1606312619070-d48b4c652a52",
+      "description": "Delicious chocolate cake",
+      "author": "Admin"
+    }
+  ]
+}
