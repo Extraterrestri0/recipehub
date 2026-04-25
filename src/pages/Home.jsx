@@ -41,16 +41,17 @@ export default function Home() {
             <h2>{recipe.title}</h2>
             <img src={recipe.imageUrl} width="200" />
             <p>{recipe.description}</p>
+            <p>Author: {recipe.author}</p>
 
-            {user && (
-              <div style={styles.actions}>
-                <Link to={`/edit/${recipe.id}`}>Edit</Link>
+            {user && user.email === recipe.author && (
+  <div style={styles.actions}>
+    <Link to={`/edit/${recipe.id}`}>Edit</Link>
 
-                <button onClick={() => handleDelete(recipe.id)}>
-                  Delete
-                </button>
-              </div>
-            )}
+    <button onClick={() => handleDelete(recipe.id)}>
+      Delete
+    </button>
+  </div>
+)}
           </div>
         ))
       )}
