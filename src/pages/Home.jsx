@@ -8,9 +8,9 @@ export default function Home() {
 
   const fetchRecipes = () => {
     fetch("http://localhost:3000/recipes")
-      .then(res => res.json())
-      .then(data => setRecipes(data))
-      .catch(err => console.log(err));
+      .then((res) => res.json())
+      .then((data) => setRecipes(data))
+      .catch((err) => console.log(err));
   };
 
   useEffect(() => {
@@ -19,11 +19,10 @@ export default function Home() {
 
   const handleDelete = async (id) => {
     const confirmDelete = confirm("Are you sure you want to delete this recipe?");
-
     if (!confirmDelete) return;
 
     await fetch(`http://localhost:3000/recipes/${id}`, {
-      method: "DELETE"
+      method: "DELETE",
     });
 
     fetchRecipes();
@@ -31,43 +30,37 @@ export default function Home() {
 
   return (
     <div>
-      <h1>All Recipes</h1>
+      <h1 className="page-title">All Recipes</h1>
 
-      {recipes.length === 0 ? (
-        <p>No recipes yet...</p>
-      ) : (
-        recipes.map(recipe => (
-          <div key={recipe.id} style={styles.card}>
-            <h2>{recipe.title}</h2>
-            <img src={recipe.imageUrl} width="200" />
-            <p>{recipe.description}</p>
-            <p>Author: {recipe.author}</p>
+      <div className="recipe-grid">
+        {recipes.length === 0 ? (
+          <p>No recipes yet...</p>
+        ) : (
+          recipes.map((recipe) => (
+            <div key={recipe.id} className="recipe-card">
+              <img src={recipe.imageUrl} alt={recipe.title} />
 
-            {user && user.email === recipe.author && (
-  <div style={styles.actions}>
-    <Link to={`/edit/${recipe.id}`}>Edit</Link>
+              <div className="recipe-content">
+                <h2>{recipe.title}</h2>
+                <p>{recipe.description}</p>
+                <p className="author">Author: {recipe.author}</p>
 
-    <button onClick={() => handleDelete(recipe.id)}>
-      Delete
-    </button>
-  </div>
-)}
-          </div>
-        ))
-      )}
+                {user && user.email === recipe.author && (
+                  <div className="actions">
+                    <Link className="edit-link" to={`/edit/${recipe.id}`}>
+                      Edit
+                    </Link>
+
+                    <button onClick={() => handleDelete(recipe.id)}>
+                      Delete
+                    </button>
+                  </div>
+                )}
+              </div>
+            </div>
+          ))
+        )}
+      </div>
     </div>
   );
 }
-
-const styles = {
-  card: {
-    border: "1px solid #ccc",
-    padding: "10px",
-    margin: "10px 0"
-  },
-  actions: {
-    display: "flex",
-    gap: "10px",
-    justifyContent: "center"
-  }
-};
