@@ -8,9 +8,11 @@ import RecipeDetails from "./pages/RecipeDetails";
 import CreateRecipe from "./pages/CreateRecipe";
 import EditRecipe from "./pages/EditRecipe";
 import NotFound from "./pages/NotFound";
+import { AuthProvider } from "./context/AuthContext";
 
 function App() {
-  return (
+return (
+  <AuthProvider>
     <BrowserRouter>
       <Navbar />
 
@@ -26,7 +28,7 @@ function App() {
         </Routes>
       </main>
     </BrowserRouter>
-  );
-}
+  </AuthProvider>
+);
 
 export default App;
