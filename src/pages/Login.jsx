@@ -13,13 +13,16 @@ export default function Login() {
     e.preventDefault();
 
     try {
-      const res = await fetch(`http://localhost:3000/users?email=${email}`);
-const data = await res.json();
+      const cleanEmail = email.trim();
+      const cleanPassword = password.trim();
 
-if (data.length === 0 || data[0].password !== password) {
-  alert("Invalid credentials");
-  return;
-}
+      const res = await fetch(`http://localhost:3000/users?email=${cleanEmail}`);
+      const data = await res.json();
+
+      if (data.length === 0 || data[0].password !== cleanPassword) {
+        alert("Invalid credentials");
+        return;
+      }
 
       login(data[0]);
       navigate("/");

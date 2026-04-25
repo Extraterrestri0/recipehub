@@ -9,6 +9,7 @@ import CreateRecipe from "./pages/CreateRecipe";
 import EditRecipe from "./pages/EditRecipe";
 import NotFound from "./pages/NotFound";
 import { AuthProvider } from "./context/AuthContext";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
@@ -22,8 +23,23 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/recipes/:id" element={<RecipeDetails />} />
-            <Route path="/create" element={<CreateRecipe />} />
-            <Route path="/edit/:id" element={<EditRecipe />} />
+            <Route
+  path="/create"
+  element={
+    <ProtectedRoute>
+      <CreateRecipe />
+    </ProtectedRoute>
+  }
+/>
+
+<Route
+  path="/edit/:id"
+  element={
+    <ProtectedRoute>
+      <EditRecipe />
+    </ProtectedRoute>
+  }
+/>
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
