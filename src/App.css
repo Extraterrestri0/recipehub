@@ -3,12 +3,8 @@
 }
 
 body {
-  margin: 0;
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: linear-gradient(135deg, #fff7ed, #fef3c7);
-  color: #1f2937;
+  background: #f3f4f6;
 }
-
 a {
   text-decoration: none;
 }
@@ -24,10 +20,9 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 18px 60px;
-  background: #111827;
+  padding: 18px 50px;
+  background: #111; 
   color: white;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
 }
 
 .logo {
@@ -44,8 +39,7 @@ a {
 }
 
 .nav-links a {
-  color: #f9fafb;
-  font-weight: 600;
+  color: white;
 }
 
 .nav-links a:hover {
@@ -81,14 +75,16 @@ a {
   display: flex;
   align-items: center;
   padding: 60px;
-  border-radius: 28px;
+  border-radius: 24px;
+
   background:
-    linear-gradient(rgba(17, 24, 39, 0.72), rgba(17, 24, 39, 0.72)),
+    linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
     url("https://images.unsplash.com/photo-1504674900247-0877df9cc836");
+
   background-size: cover;
   background-position: center;
+
   color: white;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
 }
 
 .hero div {
@@ -159,15 +155,13 @@ a {
 
 .recipe-card {
   background: white;
-  border-radius: 24px;
+  border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 14px 35px rgba(17, 24, 39, 0.12);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
 .recipe-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 22px 45px rgba(17, 24, 39, 0.18);
+  transform: translateY(-4px);
 }
 
 .recipe-card img {
@@ -248,14 +242,9 @@ textarea {
 }
 
 button {
-  padding: 12px 18px;
-  border: none;
-  border-radius: 14px;
   background: #f97316;
-  color: white;
-  font-weight: 800;
-  cursor: pointer;
-  transition: 0.2s ease;
+  border-radius: 10px;
+  padding: 10px 16px;
 }
 
 button:hover {
