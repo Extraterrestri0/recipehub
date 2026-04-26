@@ -15,17 +15,10 @@
     },
     {
       "title": "Pizza",
-      "imageUrl": "https://images.unsplash.com/photo-1601924582975-7c6b8a2b7d9c",
-      "description": "Very вкусна пица",
+      "imageUrl": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38",
+      "description": "Good Pizza",
       "author": "test@gmail.com",
-      "id": "NzEAhiwPpU4"
-    },
-    {
-      "title": "Pizza 2",
-      "imageUrl": "https://images.unsplash.com/photo-1548365328-8b849e6c6a3b",
-      "description": "good",
-      "author": "test@gmail.com",
-      "id": "k_bIC0ql5ps"
+      "id": "HupfBj2kwhY"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
