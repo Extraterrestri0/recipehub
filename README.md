@@ -1,16 +1,115 @@
-# React + Vite
+# 🍽️ RecipeHub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+RecipeHub is a React web application for creating and managing recipes.  
+It allows users to register, log in, and manage their own recipes through a simple and user-friendly interface.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📌 Description
 
-## React Compiler
+The application provides the following features:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- User registration and login
+- Creating new recipes
+- Editing existing recipes
+- Deleting recipes
+- Viewing all available recipes
+- Restricting actions so only the author can edit/delete their own recipes
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Technologies Used
+
+- React (Vite)
+- React Router
+- Context API (for authentication)
+- JSON Server (REST API)
+- CSS (custom styling)
+
+---
+
+## 🔐 Authentication
+
+Users can:
+
+- Register
+- Login
+- Logout
+
+Only authenticated users are allowed to:
+- Create recipes
+- Edit recipes
+- Delete recipes
+
+---
+
+## 🔒 Protected Routes
+
+The following routes are protected:
+
+- `/create`
+- `/edit/:id`
+
+If a user is not authenticated, they are redirected to the login page.
+
+---
+
+## 🔄 CRUD Functionality
+
+The application supports full CRUD operations:
+
+- **Create** – Add a new recipe  
+- **Read** – View all recipes  
+- **Update** – Edit existing recipes  
+- **Delete** – Remove recipes  
+
+---
+
+## 🌐 REST API
+
+The project uses `json-server` as a mock backend:
+http://localhost:3000/recipes
+http://localhost:3000/users
+
+---
+
+## ▶️ Getting Started
+
+To run the project locally:
+npm install
+npm run server
+npm run dev
+
+Then open:
+http://localhost:5173
+
+---
+
+## 🎨 Features
+
+- Responsive UI design
+- Styled recipe cards
+- Display recipe author
+- Authorization logic (only the creator can edit/delete)
+
+---
+
+## 👨‍💻 Author
+
+Created by:  
+**Extraterrestrio**
+
+---
+
+## 🎯 Project Purpose
+
+This project was created for educational purposes and demonstrates:
+
+- React components
+- Routing with React Router
+- Form handling
+- React Hooks (`useState`, `useEffect`)
+- Context API for authentication
+- REST API integration
+- Git version control with commits
+
