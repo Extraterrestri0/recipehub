@@ -30,20 +30,44 @@ export default function Home() {
 
   return (
     <div>
-      <h1 className="page-title">All Recipes</h1>
+      <section className="hero">
+        <div>
+          <span className="hero-badge">Fresh recipes every day</span>
+          <h1>Discover, create and manage your favorite recipes.</h1>
+          <p>
+            RecipeHub helps you store your recipes, share ideas and manage your
+            personal food collection in one simple React application.
+          </p>
+
+          {user ? (
+            <Link to="/create" className="hero-button">
+              Create your recipe
+            </Link>
+          ) : (
+            <Link to="/register" className="hero-button">
+              Get started
+            </Link>
+          )}
+        </div>
+      </section>
+
+      <div className="section-heading">
+        <h2>Latest Recipes</h2>
+        <p>Browse all recipes added to the platform.</p>
+      </div>
 
       <div className="recipe-grid">
         {recipes.length === 0 ? (
-          <p>No recipes yet...</p>
+          <p className="empty-message">No recipes yet...</p>
         ) : (
           recipes.map((recipe) => (
             <div key={recipe.id} className="recipe-card">
               <img src={recipe.imageUrl} alt={recipe.title} />
 
               <div className="recipe-content">
-                <h2>{recipe.title}</h2>
+                <h3>{recipe.title}</h3>
                 <p>{recipe.description}</p>
-                <p className="author">Author: {recipe.author}</p>
+                <p className="author">Created by {recipe.author}</p>
 
                 {user && user.email === recipe.author && (
                   <div className="actions">

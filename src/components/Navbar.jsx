@@ -5,48 +5,32 @@ export default function Navbar() {
   const { user, logout } = useAuth();
 
   return (
-    <nav style={styles.nav}>
-      <h2>RecipeHub</h2>
+    <nav className="navbar">
+      <Link to="/" className="logo">
+        RecipeHub
+      </Link>
 
-      <div style={styles.links}>
+      <div className="nav-links">
         <Link to="/">Home</Link>
 
         {user ? (
           <>
-            <Link to="/create">Create</Link>
-            <button onClick={logout} style={styles.button}>
+            <Link to="/create" className="create-link">
+              Create Recipe
+            </Link>
+            <button onClick={logout} className="logout-btn">
               Logout
             </button>
           </>
         ) : (
           <>
             <Link to="/login">Login</Link>
-            <Link to="/register">Register</Link>
+            <Link to="/register" className="register-link">
+              Register
+            </Link>
           </>
         )}
       </div>
     </nav>
   );
 }
-
-const styles = {
-  nav: {
-    display: "flex",
-    justifyContent: "space-between",
-    padding: "15px",
-    background: "#333",
-    color: "#fff"
-  },
-  links: {
-    display: "flex",
-    gap: "15px",
-    alignItems: "center"
-  },
-  button: {
-    background: "red",
-    color: "#fff",
-    border: "none",
-    padding: "5px 10px",
-    cursor: "pointer"
-  }
-};
