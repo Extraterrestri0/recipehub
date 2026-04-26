@@ -97,7 +97,7 @@ http://localhost:5173
 ## 👨‍💻 Author
 
 Created by:  
-**Extraterrestrio**
+**Nikola Nikolov**
 
 ---
 
